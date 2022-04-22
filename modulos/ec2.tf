@@ -17,12 +17,12 @@ data "aws_ami" "ubuntu_east" {
   owners = var.owner_image # Canonical
 }
 
-#criação instancia N. Virginia east-1
+
+#tfsec:ignore:aws_instance
 resource "aws_instance" "east" {
   count = var.servers
-  #tfsec:ignore:aws_instance
+  
   ami           = data.aws_ami.ubuntu_east.id
- #key_name = [nome_chave3.86.254.92]
   instance_type = var.instance_type
   provider      = aws
 
