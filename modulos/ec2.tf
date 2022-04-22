@@ -18,8 +18,8 @@ data "aws_ami" "ubuntu_east" {
 }
 
 
-#tfsec:ignore:aws_instance
-resource "aws_instance" "east" {
+
+resource "aws_instance" "east"  {
   count = var.servers
   
   ami           = data.aws_ami.ubuntu_east.id
