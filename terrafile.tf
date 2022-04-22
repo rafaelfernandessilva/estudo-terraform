@@ -14,16 +14,16 @@ output "public_dns" {
 
 # Teste de retorno de um valor sensitive para nonsensitive
 variable "nosense" {
-  default   = "MELHOR ENVIO"
-  type      = string
+  default = "MELHOR ENVIO"
+  type   = string
   sensitive = true
 }
 
 output "teste_sense" {
-  value     = var.nosense
-  sensitive = true
+  value  = var.nosense
+  sensitive       = true
 }
 
 output "teste_nosense" {
-  value = nonsensitive(var.nosense)
+  value      = nonsensitive(var.nosense)
 }
