@@ -20,6 +20,7 @@ data "aws_ami" "ubuntu_east" {
 #criação instancia N. Virginia east-1
 resource "aws_instance" "east" {
   count = var.servers
+  #tfsec:ignore:aws_instance
   ami           = data.aws_ami.ubuntu_east.id
  #key_name = [nome_chave3.86.254.92]
   instance_type = var.instance_type
